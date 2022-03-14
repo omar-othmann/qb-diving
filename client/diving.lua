@@ -139,6 +139,7 @@ RegisterNetEvent('qb-diving:client:UseGear', function(bool)
             end
             TankObject = CreateObject(tankModel, 1.0, 1.0, 1.0, 1, 1, 0)
             local bone1 = GetPedBoneIndex(PlayerPedId(), 24818)
+	    SetEntityCollision(TankObject, false, false)
             AttachEntityToEntity(TankObject, PlayerPedId(), bone1, -0.25, -0.25, 0.0, 180.0, 90.0, 0.0, 1, 1, 0, 0, 2, 1)
             currentGear.tank = TankObject
 
@@ -148,6 +149,7 @@ RegisterNetEvent('qb-diving:client:UseGear', function(bool)
             end
 
             MaskObject = CreateObject(maskModel, 1.0, 1.0, 1.0, 1, 1, 0)
+	    SetEntityCollision(MaskObject, false, false)
             local bone2 = GetPedBoneIndex(PlayerPedId(), 12844)
             AttachEntityToEntity(MaskObject, PlayerPedId(), bone2, 0.0, 0.0, 0.0, 180.0, 90.0, 0.0, 1, 1, 0, 0, 2, 1)
             currentGear.mask = MaskObject
